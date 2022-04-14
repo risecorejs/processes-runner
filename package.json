@@ -1,0 +1,26 @@
+{
+  "name": "@risecorejs/processes-runner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/risecorejs/processes-runner.git"
+  },
+  "author": "Amenov Abdulsalam <amenov.abdulsalam@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/risecorejs/processes-runner/issues"
+  },
+  "homepage": "https://github.com/risecorejs/processes-runner#readme",
+  "dependencies": {
+    "@risecorejs/helpers": "^2.0.4",
+    "execa": "^5.1.1"
+  },
+  "devDependencies": {
+    "prettier": "2.3.2"
+  }
+}
