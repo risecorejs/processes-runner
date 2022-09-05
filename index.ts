@@ -1,4 +1,4 @@
-import { env } from '@risecorejs/helpers'
+import env from '@risecorejs/helpers/lib/env'
 import execa from 'execa'
 
 import { IProcesses, IState, IProcessOptions } from './interfaces'

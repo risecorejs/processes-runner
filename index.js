@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const helpers_1 = require("@risecorejs/helpers");
+const env_1 = __importDefault(require("@risecorejs/helpers/lib/env"));
 const execa_1 = __importDefault(require("execa"));
 /**
  * PROCESSES-RUNNER
@@ -19,18 +19,18 @@ async function default_1(processes) {
             default: []
         }
     };
-    for (const [, processOptions] of Object.entries(processes)) {
+    for (const [, process] of Object.entries(processes)) {
         for (const mode of state.modes) {
-            const processOptionsMode = processOptions[mode];
-            if (processOptionsMode) {
+            const processOptions = process[mode];
+            if (processOptions) {
                 state.processes[mode].push({
-                    cmd: getParsedCMD(processOptionsMode.cmd, processOptions.vars),
-                    await: Boolean(processOptionsMode.await)
+                    cmd: getParsedCMD(processOptions.cmd, process.vars),
+                    await: Boolean(processOptions.await)
                 });
             }
         }
     }
-    switch ((0, helpers_1.env)('NODE_ENV')) {
+    switch ((0, env_1.default)('NODE_ENV')) {
         case 'development':
             await runProcesses(state.processes.dev);
             break;
