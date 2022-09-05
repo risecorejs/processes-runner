@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/risecorejs/processes-runner.git"
@@ -14,7 +15,7 @@
   },
   "homepage": "https://github.com/risecorejs/processes-runner#readme",
   "dependencies": {
-    "@risecorejs/helpers": "^3.0.1",
+    "@risecorejs/helpers": "^3.0.3",
     "execa": "5.1.1"
   },
   "devDependencies": {
