@@ -18,14 +18,14 @@ export default async function (processes: IProcesses): Promise<void> {
     }
   }
 
-  for (const [, processOptions] of Object.entries(processes)) {
+  for (const [, process] of Object.entries(processes)) {
     for (const mode of state.modes) {
-      const processOptionsMode = processOptions[mode]
+      const processOptions = process[mode]
 
-      if (processOptionsMode) {
+      if (processOptions) {
         state.processes[mode].push({
-          cmd: getParsedCMD(processOptionsMode.cmd, processOptions.vars),
-          await: Boolean(processOptionsMode.await)
+          cmd: getParsedCMD(processOptions.cmd, process.vars),
+          await: Boolean(processOptions.await)
         })
       }
     }
