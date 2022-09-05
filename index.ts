@@ -52,7 +52,7 @@ export default async function (processes: IProcesses): Promise<void> {
  * @param vars {object | undefined}
  * @return {string}
  */
-function getParsedCMD(cmd: string, vars: object | undefined) {
+function getParsedCMD(cmd: string, vars: object | undefined): string {
   if (vars) {
     for (const [key, value] of Object.entries(vars)) {
       cmd = cmd.replaceAll(new RegExp(`{{(?:\\s|)${key}(?:\\s|)}}`, 'g'), value)
@@ -67,7 +67,7 @@ function getParsedCMD(cmd: string, vars: object | undefined) {
  * @param processes {IProcessOptions[]}
  * @return {Promise<void>}
  */
-async function runProcesses(processes: IProcessOptions[]) {
+async function runProcesses(processes: IProcessOptions[]): Promise<void> {
   for (const process of processes) {
     if (process.await) {
       await runExeca(process.cmd)
@@ -82,7 +82,7 @@ async function runProcesses(processes: IProcessOptions[]) {
  * @param cmd {string}
  * @return {Promise<any>}
  */
-function runExeca(cmd: string) {
+function runExeca(cmd: string): Promise<any> {
   return execa(cmd, {
     stdin: process.stdin,
     stdout: process.stdout,
