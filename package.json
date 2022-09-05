@@ -15,7 +15,7 @@
   },
   "homepage": "https://github.com/risecorejs/processes-runner#readme",
   "dependencies": {
-    "@risecorejs/helpers": "^3.0.3",
+    "@risecorejs/helpers": "^3.0.4",
     "execa": "5.1.1"
   },
   "devDependencies": {
