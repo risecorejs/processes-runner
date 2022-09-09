@@ -8,7 +8,6 @@ const execa_1 = __importDefault(require("execa"));
 /**
  * PROCESSES-RUNNER
  * @param processes {IProcesses}
- * @return {Promise<void>}
  */
 async function default_1(processes) {
     const state = {
@@ -60,7 +59,6 @@ function getParsedCMD(cmd, vars) {
 /**
  * RUN-PROCESSES
  * @param processes {IProcessOptions[]}
- * @return {Promise<void>}
  */
 async function runProcesses(processes) {
     for (const process of processes) {

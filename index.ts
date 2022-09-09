@@ -6,9 +6,8 @@ import { IProcesses, IState, IProcessOptions } from './interfaces'
 /**
  * PROCESSES-RUNNER
  * @param processes {IProcesses}
- * @return {Promise<void>}
  */
-export default async function (processes: IProcesses): Promise<void> {
+export default async function (processes: IProcesses) {
   const state: IState = {
     modes: ['dev', 'prod', 'default'],
     processes: {
@@ -65,9 +64,8 @@ function getParsedCMD(cmd: string, vars: object | undefined): string {
 /**
  * RUN-PROCESSES
  * @param processes {IProcessOptions[]}
- * @return {Promise<void>}
  */
-async function runProcesses(processes: IProcessOptions[]): Promise<void> {
+async function runProcesses(processes: IProcessOptions[]) {
   for (const process of processes) {
     if (process.await) {
       await runExeca(process.cmd)
